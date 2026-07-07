@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./screenshots:/app/screenshots
+    environment:
+      - USE_AI_FALLBACK=True
+    restart: always
+
+  smartattend-frontend:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - ./smartattend-frontend:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - backend
+    restart: always
+
+  examshield-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./screenshots:/app/screenshots
+      - ./examshield-frontend:/app/examshield-frontend
+    environment:
+      - USE_AI_FALLBACK=True
+      - BACKEND_API_URL=http://backend:8000
+      - BROWSER_API_URL=http://localhost:8000
+    command: streamlit run examshield-frontend/app.py --server.port 8501 --server.address 0.0.0.0
+    depends_on:
+      - backend
+    restart: always

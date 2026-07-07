@@ -1,0 +1,68 @@
+# ===========================
+# CampusAI Suite .gitignore
+# ===========================
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+venv/
+env/
+.env
+*.whl
+
+# ---------- Node.js ----------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# ---------- Student Data (Privacy) ----------
+# Student photos and biometric data are excluded from the public repo.
+# Teammates: get the dataset privately from the team lead.
+data/students/*
+!data/students/README.md
+data/students.db
+data/student_id_mapping.txt
+
+# ---------- Runtime Outputs ----------
+screenshots/*
+!screenshots/.gitkeep
+working/
+*.pdf
+
+# ---------- ML Models (Large Files) ----------
+# YOLOv8 nano — download from:
+# https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n.pt
+yolov8n.pt
+
+# Note: ml/models/face_landmarker.task IS tracked (needed for gaze detection)
+
+# ---------- IDE & Editor ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.puku/
+
+# ---------- OS ----------
+Thumbs.db
+.DS_Store
+Desktop.ini
+ehthumbs.db
+
+# ---------- Docker ----------
+*.log
+
+# ---------- Misc ----------
+*.bak
+*.tmp
+*.orig
