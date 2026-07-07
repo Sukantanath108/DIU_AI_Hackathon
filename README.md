@@ -312,8 +312,8 @@ Full interactive documentation: http://localhost:8000/docs
 
 **Team Mongolchari** — Daffodil International University
 
-Built for the **DIU AI Hackathon 2026**.
+Built for the **DIU AI Hackathon 2026** by **Sukanta Nath**.
 
 ---
 
-<p align="center"><i>Made with ❤️ for smarter classrooms</i></p>
+
