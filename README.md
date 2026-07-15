@@ -310,8 +310,7 @@ Full interactive documentation: http://localhost:8000/docs
 
 ## 👥 Team
 
-**Team Mongolchari** — Daffodil International University
-
+**Team Mongolchari** — Chittagong University of Engineering & Technology 
 Built for the **DIU AI Hackathon 2026** by **Sukanta Nath**.
 
 ---
